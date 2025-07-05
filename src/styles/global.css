@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.font-surfer {
+  font-family: "Original Surfer", cursive !important;
+}

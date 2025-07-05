@@ -1,22 +1,335 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandra & Trigo - Boda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link 
+  href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" 
+  rel="stylesheet"
+  is:inline
+/>  
+<script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'serif': ['Playfair Display', 'serif'],
+            'sans': ['Inter', 'sans-serif'],
+            'nunito': ['Nunito', 'sans-serif'],
+            'surfer': ['Original Surfer', 'cursive'],
+          },
+          colors: {
+            'wedding-purple': '#8B4B8C',
+            'wedding-blue': '#667eea',
+            'wedding-purple-dark': '#764ba2',
+          },
+          animation: {
+            'bounce-slow': 'bounce 2s infinite',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="w-full font-nunito text-gray-800 scroll-smooth">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 py-4 transition-all duration-300" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+      <div class="text-2xl font-bold text-wedding-purple">S & T</div>
+      <ul class="hidden md:flex space-x-8">
+        <li><a href="#home" class="text-gray-700 hover:text-wedding-purple transition-colors duration-300">Inicio</a></li>
+        <li><a href="#story" class="text-gray-700 hover:text-wedding-purple transition-colors duration-300">Nuestra Historia</a></li>
+        <li><a href="#details" class="text-gray-700 hover:text-wedding-purple transition-colors duration-300">Detalles</a></li>
+        <li><a href="#rsvp" class="text-gray-700 hover:text-wedding-purple transition-colors duration-300">Confirmar Asistencia</a></li>
+      </ul>
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden bg-white/95 backdrop-blur-md border-t" id="mobile-menu">
+      <div class="px-6 py-4 space-y-3">
+        <a href="#home" class="block text-gray-700 hover:text-wedding-purple transition-colors">Inicio</a>
+        <a href="#story" class="block text-gray-700 hover:text-wedding-purple transition-colors">Nuestra Historia</a>
+        <a href="#details" class="block text-gray-700 hover:text-wedding-purple transition-colors">Detalles</a>
+        <a href="#rsvp" class="block text-gray-700 hover:text-wedding-purple transition-colors">Confirmar Asistencia</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen bg-[url('/dinah.jpg')] bg-cover bg-center bg-no-repeat xl:bg-[position:center_35%] flex flex-col justify-center items-center text-white text-center relative">
+    <div class="z-10 px-6">
+      <h1 class="font-surfer text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">Sandra & Trigo (Feat. Dinah)</h1>
+      <p class="text-xl font-bold md:text-2xl mb-8">¡Nos casamos!</p>
+      <div class="text-lg md:text-xl mb-2 font-medium">6 de Septiembre de 2025</div>
+      <div class="text-base md:text-lg opacity-90">C. Quitapenas, 3, Málaga-Este</div>
+    </div>
+    <div class="absolute bottom-8 text-center animate-bounce-slow">
+      <span class="block text-sm mb-2">Desliza para explorar</span>
+      <div class="text-2xl">↓</div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section id="story" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-surfer text-3xl md:text-4xl text-center mb-12 text-wedding-purple">Nuestra Historia</h2>
+      <div class="grid md:grid-cols-3 gap-12 items-start">
+        <div class="md:col-span-2 space-y-8">
+			<div>
+				<h3 class="text-xl md:text-2xl mb-4 text-wedding-purple">Nuestra historia de amor</h3>
+				<p class="text-base md:text-lg leading-relaxed text-gray-700">
+					Nuestra historia comenzó hace 5 años, cuando nuestros caminos se cruzaron en un momento mágico que cambió nuestras vidas para siempre. 
+					Desde entonces, hemos construido un amor sólido y duradero que nos ha llevado hasta este día tan especial.
+				</p>
+			  </div>
+			<div>
+            <h3 class="text-xl md:text-2xl mb-4 text-wedding-purple">La Propuesta</h3>
+            <p class="text-base md:text-lg leading-relaxed text-gray-700">
+              ¡Que sí! Que nos casamos!!!
+¡Estamos super felices! Nos sentimos en las nubes y queremos compartir contigo todo nuestro amor. Por eso estamos preparando una boda que hará historia y en la que te lo pasarás genial.
+Aquí encontrarán todos los detalles necesarios para acompañarnos en nuestra celebración el 6 de septiembre
+de 2025 en Málaga. ¡No se lo pierdan!
+            </p>
+          </div>
+          
+
+        </div>
+        <div class="text-center">
+          <div class="w-full h-80 bg-gray-200 rounded-xl flex items-center justify-center text-6xl mb-4">
+            <img src="/beso1.jpeg" alt="Nuestra foto de compromiso" class="w-full h-full object-cover rounded-xl">
+          </div>
+          <!-- <p class="text-gray-600 italic">Nuestra foto de compromiso</p> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wedding Details Section -->
+  <section id="details" class="py-20 bg-[url('/beso2.jpeg')] bg-cover bg-[position:center_80%] bg-no-repeat relative">
+    <div class="absolute inset-0 bg-white/80 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <h2 class="font-surfer text-3xl md:text-4xl text-center mb-12 text-wedding-purple">Banquete y Ceremonia</h2>
+	  <div class="grid md:grid-cols-3 gap-12 items-start mb-12">
+        <div class="md:col-span-2 space-y-8">
+			<div>
+				<h3 class="text-xl md:text-2xl mb-4 text-wedding-purple">Banquete</h3>
+				<p class="text-base md:text-lg leading-relaxed text-gray-700">
+					Lo importante, el convite, tienes el mapa y la dirección abajo. Hora de inicio del convite es 14:00 pm.
+					Se habilitaran autobuses desde el ayuntamiento hasta el convite. ¡Os recordamos que completáis el formulario para que se os tenga en cuenta para el autobús si es necesario!				</p>
+			  </div>
+      </div>
+    </div>
+
+	<div class="max-w-6xl mx-auto px-6">
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+		  <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+			<div class="text-4xl mb-4">📅</div>
+			<h3 class="text-xl mb-4 text-wedding-purple">Cuándo</h3>
+			<p class="text-gray-700 mb-2">Sábado, 6 de Septiembre de 2025</p>
+			<p class="text-gray-700 mb-2">Ceremonia: 13:15 hrs</p>
+			<p class="text-gray-700">Banquete: 14:00 hrs</p>
+		  </div>
+  
+		  <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+			  <div class="text-4xl mb-4">🏫</div>
+			  <h3 class="text-xl mb-4 text-wedding-purple">Ceremonia</h3>
+			  <p class="text-gray-700 mb-2">Ayuntamiento de Málaga</p>
+			  <p class="text-gray-700 mb-2">Av. de Cervantes, 4, Distrito Centro, 29016 Málaga</p>
+			  <a
+			  href="/boda-sandra-trigo.ics"
+			  download
+			  class="inline-block mt-2 px-4 py-2 bg-wedding-purple rounded-lg font-medium hover:bg-wedding-purple-dark transition"
+			>
+			 Añadir al calendario
+			</a>
+			</div>
+		  
+		  <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+			<div class="text-4xl mb-4">📍</div>
+			<h3 class="text-xl mb-4 text-wedding-purple">Dónde</h3>
+			<p class="text-gray-700 mb-2">C. Quitapenas, 3</p>
+			<p class="text-gray-700 mb-2">Málaga-Este</p>
+			<p class="text-gray-700">29017 Málaga</p>
+			<a
+			href="/banquete-sandra-trigo.ics"
+			download
+			class="inline-block mt-2 px-4 py-2 bg-wedding-purple rounded-lg font-medium hover:bg-wedding-purple-dark transition"
+		  >
+			Añadir al calendario
+		  </a>
+		  </div>
+		  
+		  <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+			<div class="text-4xl mb-4">👗</div>
+			<h3 class="text-xl mb-4 text-wedding-purple">Código de Vestimenta</h3>
+			<p class="text-gray-700 mb-2">Hombres: pantalón corto y </p>
+			<p class="text-gray-700 mb-2">Mujeres: elegante y cómodo</p>
+		  </div>
+		  
+  
+		</div>
+	  </div>
+  </section>
+
+
+  <!-- RSVP Section -->
+  <section id="rsvp" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-surfer text-3xl md:text-4xl text-center mb-6 text-wedding-purple">Confirmar Asistencia</h2>
+      <p class="text-center text-lg md:text-xl mb-12 text-gray-600">¡Estamos deseando celebrar contigo!</p>
+      <p class="text-center text-lg md:text-xl mb-12 text-gray-600">Sigue el siguiente enlace para añadir tus datos y confirmar tu asistencia</p>
+      <!-- <form class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
+        <div class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre(s) completo(s)</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-wedding-purple focus:outline-none transition-colors duration-300"
+            >
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-wedding-purple focus:outline-none transition-colors duration-300"
+            >
+          </div>
+          
+          <div>
+            <label for="attendance" class="block text-sm font-medium text-gray-700 mb-2">¿Asistirás?</label>
+            <select 
+              id="attendance" 
+              name="attendance" 
+              required 
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-wedding-purple focus:outline-none transition-colors duration-300"
+            >
+              <option value="">Por favor selecciona</option>
+              <option value="yes">¡Sí, asistiré!</option>
+              <option value="no">Lo siento, no podré asistir</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="guests" class="block text-sm font-medium text-gray-700 mb-2">Número de acompañantes</label>
+            <select 
+              id="guests" 
+              name="guests" 
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-wedding-purple focus:outline-none transition-colors duration-300"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="dietary" class="block text-sm font-medium text-gray-700 mb-2">Restricciones alimentarias</label>
+            <textarea 
+              id="dietary" 
+              name="dietary" 
+              rows="4" 
+              placeholder="Por favor indícanos si tienes alguna restricción o alergia alimentaria"
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-wedding-purple focus:outline-none transition-colors duration-300 resize-none"
+            ></textarea>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="w-full bg-gradient-to-r from-wedding-blue to-wedding-purple-dark text-white py-4 px-8 rounded-lg font-medium text-lg hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Enviar confirmación
+          </button>
+        </div>
+      </form> -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p>&copy; 2025 Sandra & Trigo. Hecho con ❤️</p>
+      <p>Sponsored by Casaamigos</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Close mobile menu when clicking on links
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenu) mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = (anchor as HTMLAnchorElement).getAttribute('href');
+        const target = document.querySelector(href!);
+        if (target) {
+          const offsetTop = (target as HTMLElement).offsetTop - 80; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Form submission
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('¡Gracias por confirmar tu asistencia! Nos pondremos en contacto pronto.');
+      });
+    }
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (navbar) {
+        if (window.scrollY > 100) {
+          navbar.classList.remove('bg-white/95');
+          navbar.classList.add('bg-white/98');
+        } else {
+          navbar.classList.remove('bg-white/98');
+          navbar.classList.add('bg-white/95');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sandra & Trigo//Boda//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sandra-trigo-boda-2025@example.com
+DTSTART:20250906T111500Z
+DTEND:20250906T131500Z
+DTSTAMP:20250704T120000Z
+SUMMARY:Boda de Sandra & Trigo
+DESCRIPTION:¡Nos casamos! Acompáñanos en nuestra celebración especial.\n\nCeremonia: 13:15 hrs\nRecepción: 15:00 hrs\n\nCódigo de vestimenta: Estilo Jardín Elegante\nEvita tacones de aguja (¡césped!)\n\nPara confirmar asistencia: [URL de tu sitio web]
+LOCATION:Av. de Cervantes, 4, Distrito Centro, 29016 Málaga
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Recordatorio: Boda de Sandra & Trigo mañana
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Boda de Sandra & Trigo en 2 horas
+END:VALARM
+END:VEVENT
+END:VCALENDAR

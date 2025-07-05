@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sandra & Trigo//Banquete//ES
+BEGIN:VEVENT
+UID:sandra-trigo-banquete-2025@example.com
+DTSTAMP:20240704T120000Z
+SUMMARY:Banquete de Sandra & Trigo
+DTSTART:20250906T130000Z
+DTEND:20250906T160000Z
+LOCATION:C. Quitapenas, 3, Málaga-Este, 29017 Málaga
+DESCRIPTION:¡Acompáñanos en el banquete de nuestra boda!
+END:VEVENT
+END:VCALENDAR
