@@ -202,6 +202,48 @@ de 2025 en Málaga. ¡No se lo pierdan!
     </div>
   </section>
 
+  <section id="details" class="py-20 bg-[url('/beso2.jpeg')] bg-cover bg-[position:center_80%] bg-no-repeat relative">
+    <div class="absolute inset-0 bg-white/80 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <h2 class="font-surfer text-3xl md:text-4xl text-center mb-12 text-wedding-purple">Regalos</h2>
+	  <div class="grid md:grid-cols-3 gap-12 items-start mb-12">
+        <div class="md:col-span-2 space-y-8">
+			<div>
+				<h3 class="text-xl md:text-2xl mb-4 text-wedding-purple">¡Regala con amor!</h3>
+				<p class="my-3 text-base md:text-lg leading-relaxed text-gray-700">Lo que más nos importa es que vengáis con ganas de pasarlo bien, bailar, brindar y vivir con nosotros este día tan especial.</p>
+				<p class="my-3 text-base md:text-lg leading-relaxed text-gray-700">¡Vuestra presencia es el mejor regalo!</p>
+				<p class="my-3 text-base md:text-lg leading-relaxed text-gray-700">Pero si además os hace ilusión echarnos una mano para arrancar esta nueva aventura (aka vida de casados
+					), hemos dejado una cuenta donde podéis aportar lo que queráis — sin presiones, sin compromisos, y con todo el amor del mundo.</p>
+					<p class="my-3 text-base md:text-lg leading-relaxed text-gray-700">Aquí van los datos:</p>
+					<p
+						class="my-3 text-base md:text-lg leading-relaxed text-gray-700 flex items-center gap-2 cursor-pointer select-all hover:text-gray-300 rounded px-2 transition"
+						onclick="
+							navigator.clipboard.writeText(this.querySelector('span').textContent);
+							const span = this.querySelector('span');
+							const icon = this.querySelector('svg');
+							const original = 'ES3800812711600004365646';
+							span.textContent = '¡Copiado!';
+							icon.style.stroke = '#22c55e';
+							setTimeout(() => {
+							span.textContent = original;
+							icon.style.stroke = '#555';
+							}, 1200);
+						"
+						>
+						<span>ES3800812711600004365646</span>
+						<svg width="22" height="22" viewBox="0 0 24 24" class="ml-1" style="display:inline;vertical-align:middle;stroke:#555;">
+							<title>Copiar</title>
+							<rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2" fill="none"/>
+							<path d="M5 15V5a2 2 0 0 1 2-2h10" stroke-width="2" fill="none"/>
+						</svg>
+					</p>
+					<p class="my-3 text-base md:text-lg leading-relaxed text-gray-700" >¡Muchas gracias y os esperamos!</p>
+				
+			  </div>
+      </div>
+    </div>
+</section>
+
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-8">
     <div class="max-w-6xl mx-auto px-6 text-center">
