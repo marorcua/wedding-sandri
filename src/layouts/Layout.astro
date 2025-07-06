@@ -17,28 +17,28 @@ import "../styles/global.css";
   is:inline
 />  
 <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'serif': ['Playfair Display', 'serif'],
-            'sans': ['Inter', 'sans-serif'],
-            'nunito': ['Nunito', 'sans-serif'],
-            'surfer': ['Original Surfer', 'cursive'],
-          },
-          colors: {
-            'wedding-purple': '#8B4B8C',
-            'wedding-blue': '#667eea',
-            'wedding-purple-dark': '#764ba2',
-          },
-          animation: {
-            'bounce-slow': 'bounce 2s infinite',
-          }
-        }
-      }
-    }
-  </script>
+<script>
+tailwind.config = {
+	theme: {
+	extend: {
+		fontFamily: {
+		'serif': ['Playfair Display', 'serif'],
+		'sans': ['Inter', 'sans-serif'],
+		'nunito': ['Nunito', 'sans-serif'],
+		'surfer': ['Original Surfer', 'cursive'],
+		},
+		colors: {
+		'wedding-purple': '#8B4B8C',
+		'wedding-blue': '#667eea',
+		'wedding-purple-dark': '#764ba2',
+		},
+		animation: {
+		'bounce-slow': 'bounce 2s infinite',
+		}
+	}
+	}
+}
+</script>
 </head>
 <body class="w-full font-nunito text-gray-800 scroll-smooth">
   <!-- Navigation -->
@@ -70,14 +70,21 @@ import "../styles/global.css";
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="h-screen bg-[url('/dinah.jpg')] bg-cover bg-center bg-no-repeat xl:bg-[position:center_35%] flex flex-col justify-center items-center text-white text-center relative">
+  <section id="home" class="h-screen xl:bg-[position:center_35%] flex flex-col justify-center items-center text-white text-center ">
+
+	<img
+    src="/dinah.jpg"
+    alt="Hero"
+    class="absolute top-50px inset-0 w-full object-cover z-[-1]"
+    id="hero-img"
+  />
     <div class="z-10 px-6">
       <h1 class="font-surfer text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">Sandra & Trigo (ft. Dinah)</h1>
       <p class="text-xl font-bold md:text-2xl mb-8">¡Nos casamos!</p>
       <div class="text-lg md:text-xl mb-2 font-medium">6 de Septiembre de 2025</div>
       <div class="text-base md:text-lg opacity-90">C. Quitapenas, 3, Málaga-Este</div>
     </div>
-    <div class="absolute bottom-8 text-center animate-bounce-slow">
+    <div class="absolute bottom-32 text-center animate-bounce-slow">
       <span class="block text-sm mb-2">Desliza para explorar</span>
       <div class="text-2xl">↓</div>
     </div>
@@ -202,7 +209,7 @@ de 2025 en Málaga. ¡No se lo pierdan!
     </div>
   </section>
 
-  <section id="details" class="py-20 bg-[url('/beso3.jpeg')] bg-cover bg-[position:right] bg-no-repeat relative">
+  <section id="details" class="py-20 bg-[url('/beso3.jpeg')] bg-cover bg-[position:80%_50%] lg:bg-[position:right] bg-no-repeat relative">
     <div class="absolute inset-0 bg-white/80 pointer-events-none"></div>
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <h2 class="font-surfer text-3xl md:text-4xl text-center mb-12 text-wedding-purple">Regalos</h2>
