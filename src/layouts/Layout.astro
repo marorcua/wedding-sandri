@@ -40,7 +40,7 @@ tailwind.config = {
 }
 </script>
 </head>
-<body class="w-full font-nunito text-gray-800 scroll-smooth">
+<body class="w-full font-nunito text-gray-800 scroll-smooth h-[300vh] overflow-x-hidden">
   <!-- Navigation -->
   <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 py-4 transition-all duration-300" id="navbar">
     <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
@@ -70,22 +70,23 @@ tailwind.config = {
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="max-w-[h-screen] h-screen xl:bg-[position:center_35%] flex flex-col justify-center items-center text-white text-center overflow-hidden">
-
-	<img
-    src="/dinah.jpg"
-    alt="Hero"
-    class="absolute top-50px inset-0 w-full object-cover z-[-1]"
-    id="hero-img"
-  />
-    <div class="z-10 px-6">
+  <section id="home" class="relative flex flex-col justify-center h-full">
+	<picture class="h-full block w-screen scale-125 overflow-hidden fixed top-0" id="hero-img">
+		<img
+		  src="/dinah.jpg"
+		  alt="Hero"
+		  class="absolute w-full h-full object-cover object-center"
+		  style="object-position: center 30%;"
+		/>
+	</picture>
+    <div class="relative z-10 px-6  items-center text-white text-center ">
       <h1 class="font-surfer text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">Sandra & Trigo (ft. Dinah)</h1>
       <p class="text-xl font-bold md:text-2xl mb-8">¡Nos casamos!</p>
       <div class="text-lg md:text-xl mb-2 font-medium">6 de Septiembre de 2025</div>
       <div class="text-base md:text-lg opacity-90">C. Quitapenas, 3, Málaga-Este</div>
     </div>
-    <div class="absolute bottom-32 text-center animate-bounce-slow">
-      <span class="block text-sm mb-2">Desliza para explorar</span>
+    <div id="slide-down" class="fixed block w-full bottom-10 text-center animate-bounce-slow" >
+      <span class="block text-m mb-2">Desliza para explorar</span>
       <div class="text-2xl">↓</div>
     </div>
   </section>
@@ -292,15 +293,6 @@ de 2025 en Málaga. ¡No se lo pierdan!
         }
       });
     });
-
-    // Form submission
-    const form = document.querySelector('form');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('¡Gracias por confirmar tu asistencia! Nos pondremos en contacto pronto.');
-      });
-    }
 
     // Navbar background on scroll
     window.addEventListener('scroll', function() {
